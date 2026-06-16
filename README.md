@@ -50,7 +50,7 @@ I'm now diving into AI-enabled program management — exploring how intelligent 
 
 ## 📄 View My Portfolio
 
-Visit the live portfolio: [https://chelvielan.github.io/arachelvi-portfolio/)(https://chelvielan.github.io/arachelvi-portfolio/)
+Visit the live portfolio: [https://chelvielan.github.io/arachelvi-portfolio/]
 
 ---
 

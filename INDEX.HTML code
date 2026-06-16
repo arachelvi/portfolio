@@ -1,0 +1,669 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Manager Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/tabler-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0056CC;
+            --light-blue: #4A90E2;
+            --pale-blue: #E8F0FF;
+            --light-grey: #F5F6F7;
+            --medium-grey: #D9DFE5;
+            --dark-grey: #6B7280;
+            --dark-text: #1F2937;
+            --light-text: #6B7280;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-text);
+            background: var(--light-grey);
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--white);
+            border-bottom: 2px solid var(--light-blue);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-content h1 {
+            font-size: 24px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--pale-blue) 0%, rgba(248, 250, 252, 1) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--medium-grey);
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--light-text);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.85rem 1.75rem;
+            border: 2px solid var(--light-blue);
+            border-radius: 25px;
+            background: transparent;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-text);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 16px rgba(0, 86, 204, 0.4);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+            border-bottom: 2px solid var(--medium-grey);
+        }
+
+        .section h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            color: var(--dark-text);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h3:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            border-radius: 2px;
+        }
+
+        /* Highlights */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-card {
+            background: var(--white);
+            border: 2px solid var(--light-blue);
+            border-radius: 16px;
+            padding: 1.75rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .highlight-card:nth-child(1) {
+            border-color: var(--light-blue);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+        }
+
+        .highlight-card:nth-child(2) {
+            border-color: var(--medium-grey);
+            box-shadow: 0 4px 12px rgba(217, 223, 229, 0.2);
+        }
+
+        .highlight-card:nth-child(3) {
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(0, 86, 204, 0.2);
+        }
+
+        .highlight-card:nth-child(4) {
+            border-color: var(--light-blue);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .highlight-card i {
+            font-size: 32px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .highlight-card:nth-child(1) i {
+            color: var(--light-blue);
+        }
+
+        .highlight-card:nth-child(2) i {
+            color: var(--medium-grey);
+        }
+
+        .highlight-card:nth-child(3) i {
+            color: var(--primary-blue);
+        }
+
+        .highlight-card:nth-child(4) i {
+            color: var(--light-blue);
+        }
+
+        .highlight-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--dark-text);
+        }
+
+        .highlight-card p {
+            font-size: 14px;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.75rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border: 2px solid transparent;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:nth-child(1) {
+            border-color: var(--light-blue);
+            box-shadow: 0 4px 16px rgba(74, 144, 226, 0.15);
+        }
+
+        .project-card:nth-child(2) {
+            border-color: var(--medium-grey);
+            box-shadow: 0 4px 16px rgba(217, 223, 229, 0.15);
+        }
+
+        .project-card:nth-child(3) {
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 16px rgba(0, 86, 204, 0.15);
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--light-blue), var(--primary-blue));
+        }
+
+        .project-card:nth-child(2)::before {
+            background: linear-gradient(90deg, var(--medium-grey), var(--dark-grey));
+        }
+
+        .project-card:nth-child(3)::before {
+            background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+        }
+
+        .project-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-text);
+        }
+
+        .project-card .date {
+            font-size: 13px;
+            color: var(--light-text);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: var(--light-text);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(232, 240, 255, 0.5) 100%);
+            color: var(--dark-text);
+            padding: 0.4rem 0.85rem;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid var(--light-blue);
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #0056CC 0%, #4A90E2 100%);
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            box-shadow: 0 4px 12px rgba(0, 86, 204, 0.3);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-group {
+            background: var(--white);
+            padding: 1.75rem;
+            border-radius: 16px;
+            border: 2px solid var(--light-blue);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+        }
+
+        .skill-group:nth-child(1) {
+            border-color: var(--light-blue);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+        }
+
+        .skill-group:nth-child(2) {
+            border-color: var(--medium-grey);
+            box-shadow: 0 4px 12px rgba(217, 223, 229, 0.15);
+        }
+
+        .skill-group:nth-child(3) {
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(0, 86, 204, 0.15);
+        }
+
+        .skill-group:nth-child(4) {
+            border-color: var(--light-blue);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+        }
+
+        .skill-group h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            font-size: 14px;
+            color: var(--light-text);
+            padding: 0.6rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .skill-list li:before {
+            content: "✓ ";
+            color: var(--light-blue);
+            margin-right: 0.5rem;
+            font-weight: 600;
+        }
+
+        .skill-list li:hover {
+            color: var(--dark-text);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, var(--light-grey) 100%);
+            border-top: 2px solid var(--light-blue);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-links a:nth-child(1) {
+            border-color: var(--light-blue);
+        }
+
+        .social-links a:nth-child(1):hover {
+            background: rgba(74, 144, 226, 0.2);
+        }
+
+        .social-links a:nth-child(2) {
+            border-color: var(--medium-grey);
+        }
+
+        .social-links a:nth-child(2):hover {
+            background: rgba(217, 223, 229, 0.2);
+        }
+
+        .social-links a:nth-child(3) {
+            border-color: var(--primary-blue);
+        }
+
+        .social-links a:nth-child(3):hover {
+            background: rgba(0, 86, 204, 0.2);
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--light-text);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 12px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .section h3 {
+                font-size: 24px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <h1>Arachelvi Elangovan</h1>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <h2>Senior Program Manager | AI-Enabled Delivery</h2>
+            <p>I'm Arachelvi (Chelvi), a Senior Program Manager with 11 years orchestrating global enterprise programs that shouldn't have been possible. 800-location rollouts, critical infrastructure built in two weeks, 98% on-time delivery.<br><br>I'm now diving into AI-enabled program management — exploring how intelligent automation and Gen AI can transform how we plan, execute, and scale programs. Recently completed my Master's in Health Informatics with a focus on Gen AI.<br><br>Ready to lead the next generation of smarter, faster program execution.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Download Resume</button>
+                <button class="btn">View Work</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Me Section -->
+        <section class="section">
+            <h3>From Dentist to AI-Enabled Program Leader</h3>
+            <p>I didn't start out in tech. I'm a Doctor of Dental Surgery from India, and my journey into program management wasn't planned — it was a pivot driven by curiosity and a love for building scalable systems.</p>
+            <p>Over the past 11 years, I've led enterprise-scale technology programs across healthcare, retail, telecom, and cloud infrastructure. My dental background gave me something unexpected: deep listening skills, empathy for diverse stakeholders, and the ability to work under pressure while maintaining precision. I gained regulatory discipline (HIPAA compliance), attention to detail in complex environments, and the patience to explain technical concepts to non-technical audiences. These human-centered skills became a real competitive advantage.</p>
+            <p>Now I'm merging everything — my healthcare knowledge, 11 years of execution excellence, listening and empathy skills, and a newfound passion for AI and intelligent automation. I'm fascinated by how Gen AI can make program delivery more predictable, more efficient, and less about firefighting.</p>
+            <p>This portfolio shows how I'm evolving — taking what I've learned building impossible programs with people at the center, and exploring what's next with AI.</p>
+        </section>
+
+        <!-- Key Highlights Section -->
+        <section class="section">
+            <h3>Key Highlights</h3>
+            <div class="highlights">
+                <div class="highlight-card">
+                    <i class="ti ti-target"></i>
+                    <h4>Strategic Planning</h4>
+                    <p>I develop enterprise roadmaps that align technical initiatives with business goals. At NTT Data, I designed phased strategies for 800+ location SD-WAN rollouts and 105+ hospital healthcare programs. I translate complexity into executive dashboards, govern multi-million dollar budgets, and manage dependencies across vendors and timelines.</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="ti ti-users"></i>
+                    <h4>Stakeholder Management</h4>
+                    <p>I lead cross-functional coordination across matrixed environments with competing priorities. Embedded at Google's REWs, I partnered directly with executives to optimize workspace strategies while managing field teams and vendors. I orchestrated 800+ carrier locations and 620+ retail stores by building trust through clear communication and consistent delivery.</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="ti ti-chart-line"></i>
+                    <h4>Data-Driven Decisions</h4>
+                    <p>I use metrics and dashboards to inform strategy and prioritization. At Google, I built real-time program dashboards tracking deployment status, risks, and milestones for executives. I leverage Tableau, Power BI, and advanced Excel to visualize program health, identify bottlenecks, and forecast outcomes. My data discipline ensures decisions are evidence-informed.</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="ti ti-rocket"></i>
+                    <h4>Agile Delivery</h4>
+                    <p>I manage complex launches and critical initiatives under extreme pressure. I led emergency network infrastructure for COVID-19 hospitals in partnership with US Army Corps of Engineers — standing up 10 locations in under two weeks. Delivered 100+ AV deployments across Google offices with zero disruption. Expert in Scrum, Lean, and PMBOK frameworks.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="section" id="projects">
+            <h3>Featured Projects</h3>
+            <div class="projects">
+                <div class="project-card">
+                    <h4>Emergency Hospital Network Infrastructure Deployment</h4>
+                    <p class="date">2020 — 2 weeks</p>
+                    <p>Partnered with US Army Corps of Engineers to deploy critical network infrastructure across 10 COVID-19 field hospital locations under impossible timelines. Coordinated vendors, managed supply chain logistics, and maintained 24/7 execution momentum. 10 hospitals operational in 2 weeks | 100% on-time delivery under crisis conditions | Mentored 4 coordinators who advanced to PM roles.</p>
+                    <div class="tags">
+                        <span class="tag">Crisis Management</span>
+                        <span class="tag">Vendor Coordination</span>
+                        <span class="tag">Mentoring</span>
+                    </div>
+                    <a href="project1-covid-hospital.html" class="project-link">View Project Details →</a>
+                </div>
+                <div class="project-card">
+                    <h4>Global SD-WAN Implementation</h4>
+                    <p class="date">2019-2022 — Sr. Project Manager</p>
+                    <p>Led vendor management, program oversight, and coordinator training for multi-year SD-WAN rollout across Americas, Europe, Asia, and Australia. Built self-sustaining Microsoft Teams scheduling tool enabling 20+ engineers across USA and APAC zones to sign up for sites by timezone. Tool required only monitoring. Accelerated execution speed | Generated real-time dashboards for invoicing | Reduced scheduling overhead by 80%.</p>
+                    <div class="tags">
+                        <span class="tag">Global Rollout</span>
+                        <span class="tag">Tool Development</span>
+                        <span class="tag">Vendor Management</span>
+                    </div>
+                    <a href="project2-sdwan-global.html" class="project-link">View Project Details →</a>
+                </div>
+                <div class="project-card">
+                    <h4>Cisco to Juniper Migration — Nordstrom Retail Network</h4>
+                    <p class="date">2019-2021 — Sr. Project Coordinator</p>
+                    <p>Managed 620+ store network migration across all US Nordstrom locations. Intervened in critical vendor-engineering conflict that nearly halted the project using mediation and stakeholder alignment. Successfully restarted project execution and rebuilt trust. Project resumed successfully | Customer expanded scope | Received company award for conflict resolution | Zero major retail disruptions.</p>
+                    <div class="tags">
+                        <span class="tag">Conflict Resolution</span>
+                        <span class="tag">Stakeholder Management</span>
+                        <span class="tag">Award Winner</span>
+                    </div>
+                    <a href="project3-nordstrom-migration.html" class="project-link">View Project Details →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <h3>Skills & Expertise</h3>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Program Management</h4>
+                    <ul class="skill-list">
+                        <li>Roadmap Planning & Governance</li>
+                        <li>Multi-vendor Orchestration</li>
+                        <li>Budget Management & Financial Tracking</li>
+                        <li>Risk & Issue Management</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Leadership & Coordination</h4>
+                    <ul class="skill-list">
+                        <li>Stakeholder Alignment</li>
+                        <li>Cross-functional Team Leadership</li>
+                        <li>Conflict Resolution & Mediation</li>
+                        <li>Mentoring & Team Development</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Technical & Tools</h4>
+                    <ul class="skill-list">
+                        <li>Network Infrastructure (SD-WAN, Cisco, Juniper)</li>
+                        <li>Project Management Tools (Jira, Smartsheet)</li>
+                        <li>Data Analytics (Tableau, Power BI, Excel)</li>
+                        <li>Microsoft Teams, Agile/Scrum Methodologies</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>AI & Emerging Tech</h4>
+                    <ul class="skill-list">
+                        <li>Gen AI Applications for PM</li>
+                        <li>Automation & Process Optimization</li>
+                        <li>Healthcare IT & Informatics</li>
+                        <li>Data-Driven Program Intelligence</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="social-links">
+            <a href="https://linkedin.com/in/arachelvi">LinkedIn</a>
+            <a href="https://github.com">GitHub</a>
+            <a href="mailto:arachelvi@email.com">Email</a>
+        </div>
+        <p>© 2024. Arachelvi Elangovan. Open to new opportunities.</p>
+    </footer>
+</body>
+</html>
+

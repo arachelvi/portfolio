@@ -584,7 +584,7 @@
                         <span class="tag">Vendor Coordination</span>
                         <span class="tag">Mentoring</span>
                     </div>
-                    <a href="https://chelvietan.github.io/arachelvi-portfolio/project1-covid-hospital.html" class="project-link">View Project Details →</a>
+                    <a href="/arachelvi-portfolio/project1-covid-hospital.html" class="project-link">View Project Details →</a>
                 </div>
                 <div class="project-card">
                     <h4>Global SD-WAN Implementation</h4>

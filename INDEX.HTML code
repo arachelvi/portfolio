@@ -595,7 +595,7 @@
                         <span class="tag">Tool Development</span>
                         <span class="tag">Vendor Management</span>
                     </div>
-                    <a href="project2-sdwan-global.html" class="project-link">View Project Details →</a>
+                    <a href="/arachelvi-portfolio/project2-sdwan-global.html" class="project-link">View Project Details →</a>
                 </div>
                 <div class="project-card">
                     <h4>Cisco to Juniper Migration — Nordstrom Retail Network</h4>
@@ -606,7 +606,7 @@
                         <span class="tag">Stakeholder Management</span>
                         <span class="tag">Award Winner</span>
                     </div>
-                    <a href="project3-nordstrom-migration.html" class="project-link">View Project Details →</a>
+                    <a href="/arachelvi-portfolio/project3-nordstrom-migration.html" class="project-link">View Project Details →</a>
                 </div>
             </div>
         </section>

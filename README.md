@@ -45,7 +45,7 @@ I'm now diving into AI-enabled program management — exploring how intelligent 
 ## Contact
 
 - **LinkedIn:** [linkedin.com/in/arachelvi](https://linkedin.com/in/arachelvi)
-- **Email:** arachelvi@email.com
+- **Email:** chelvi.elan@gmail.com
 - **GitHub:** [github.com//chelvielan](https://github.com/chelvielan)
 
 ## 📄 View My Portfolio

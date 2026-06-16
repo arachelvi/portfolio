@@ -46,11 +46,11 @@ I'm now diving into AI-enabled program management — exploring how intelligent 
 
 - **LinkedIn:** [linkedin.com/in/arachelvi](https://linkedin.com/in/arachelvi)
 - **Email:** arachelvi@email.com
-- **GitHub:** [github.com/arachelvi](https://github.com/arachelvi)
+- **GitHub:** [github.com//chelvielan](https://github.com/chelvielan)
 
 ## 📄 View My Portfolio
 
-Visit the live portfolio: [arachelvi-portfolio](https://yourusername.github.io/arachelvi-portfolio/)
+Visit the live portfolio: [arachelvi-portfolio](https://chelvielan.github.io/arachelvi-portfolio/)
 
 ---
 

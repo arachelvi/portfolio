@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -248,68 +249,44 @@
         /* Projects */
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.75rem;
             margin-top: 2rem;
         }
 
         .project-card {
             background: var(--white);
-            border: 2px solid transparent;
-            border-radius: 16px;
-            padding: 2rem;
+            border: 0.5px solid transparent;
+            border-radius: 12px;
+            padding: 1.5rem;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
         .project-card:nth-child(1) {
             border-color: var(--light-blue);
-            box-shadow: 0 4px 16px rgba(74, 144, 226, 0.15);
         }
 
         .project-card:nth-child(2) {
             border-color: var(--medium-grey);
-            box-shadow: 0 4px 16px rgba(217, 223, 229, 0.15);
         }
 
         .project-card:nth-child(3) {
             border-color: var(--primary-blue);
-            box-shadow: 0 4px 16px rgba(0, 86, 204, 0.15);
         }
 
         .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--light-blue), var(--primary-blue));
-        }
-
-        .project-card:nth-child(2)::before {
-            background: linear-gradient(90deg, var(--medium-grey), var(--dark-grey));
-        }
-
-        .project-card:nth-child(3)::before {
-            background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+            transform: translateY(-2px);
         }
 
         .project-card h4 {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--dark-text);
         }
 
         .project-card .date {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--light-text);
             margin-bottom: 1rem;
             font-weight: 500;
@@ -318,41 +295,39 @@
         .project-card p {
             font-size: 14px;
             color: var(--light-text);
-            line-height: 1.7;
-            margin-bottom: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
         .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
+            margin-bottom: 1rem;
         }
 
         .tag {
             background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(232, 240, 255, 0.5) 100%);
             color: var(--dark-text);
-            padding: 0.4rem 0.85rem;
-            border-radius: 20px;
+            padding: 0.35rem 0.75rem;
+            border-radius: 16px;
             font-size: 12px;
             font-weight: 500;
             border: 1px solid var(--light-blue);
+            display: inline-block;
         }
 
         .project-link {
             display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, #0056CC 0%, #4A90E2 100%);
-            color: white;
-            border-radius: 20px;
+            color: var(--light-blue);
             text-decoration: none;
-            font-size: 13px;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 13px;
+            transition: color 0.3s ease;
         }
 
         .project-link:hover {
-            box-shadow: 0 4px 12px rgba(0, 86, 204, 0.3);
+            color: var(--primary-blue);
         }
 
         /* Skills */
@@ -504,6 +479,10 @@
             .btn {
                 width: 100%;
             }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -584,7 +563,7 @@
                         <span class="tag">Vendor Coordination</span>
                         <span class="tag">Mentoring</span>
                     </div>
-                    <a href="/portfolio/project1-covid-hospital.html" class="project-link">View Project Details →</a>
+                    <a href="https://arachelvi.github.io/portfolio/project1-covid-hospital.html" class="project-link">View Project Details →</a>
                 </div>
                 <div class="project-card">
                     <h4>Global SD-WAN Implementation</h4>
@@ -595,7 +574,7 @@
                         <span class="tag">Tool Development</span>
                         <span class="tag">Vendor Management</span>
                     </div>
-                    <a href="/portfolio/project2-sdwan-global.html" class="project-link">View Project Details →</a>
+                    <a href="https://arachelvi.github.io/portfolio/project2-sdwan-global.html" class="project-link">View Project Details →</a>
                 </div>
                 <div class="project-card">
                     <h4>Cisco to Juniper Migration — Nordstrom Retail Network</h4>
@@ -606,7 +585,7 @@
                         <span class="tag">Stakeholder Management</span>
                         <span class="tag">Award Winner</span>
                     </div>
-                    <a href="/portfolio/project3-nordstrom-migration.html" class="project-link">View Project Details →</a>
+                    <a href="https://arachelvi.github.io/portfolio/project3-nordstrom-migration.html" class="project-link">View Project Details →</a>
                 </div>
             </div>
         </section>
@@ -658,12 +637,11 @@
     <!-- Footer -->
     <footer class="footer" id="contact">
         <div class="social-links">
-            <a href="https://linkedin.com/in/arachelvi-elangovan">LinkedIn</a>
-            <a href="https://github.com">GitHub</a>
+            <a href="https://linkedin.com/in/arachelvi">LinkedIn</a>
+            <a href="https://github.com/arachelvi">GitHub</a>
             <a href="mailto:chelvi.elan@gmail.com">Email</a>
         </div>
         <p>© 2024. Arachelvi Elangovan. Open to new opportunities.</p>
     </footer>
 </body>
 </html>
-

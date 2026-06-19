@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Program Manager Portfolio - v2</title>
+    <title>Program Manager Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/tabler-icons.min.css">
     <style>
         * {
@@ -641,7 +641,7 @@
             <a href="https://github.com/arachelvi">GitHub</a>
             <a href="mailto:chelvi.elan@gmail.com">Email</a>
         </div>
-        <p>© 2024. Arachelvi Elangovan. Open to new opportunities. v2</p>
+        <p>© 2024. Arachelvi Elangovan. Open to new opportunities.</p>
     </footer>
 </body>
 </html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Hospital Network Infrastructure | Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/tabler-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0056CC;
+            --light-blue: #4A90E2;
+            --pale-blue: #E8F0FF;
+            --light-grey: #F5F6F7;
+            --medium-grey: #D9DFE5;
+            --dark-grey: #6B7280;
+            --dark-text: #1F2937;
+            --light-text: #6B7280;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-text);
+            background: var(--light-grey);
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--white);
+            border-bottom: 2px solid var(--light-blue);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-content h1 {
+            font-size: 24px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-link {
+            font-size: 14px;
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero */
+        .project-hero {
+            background: linear-gradient(135deg, var(--pale-blue) 0%, rgba(248, 250, 252, 1) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--medium-grey);
+            margin-bottom: 2rem;
+        }
+
+        .project-hero h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 12px;
+            color: var(--light-text);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* Section */
+        .section {
+            padding: 3rem 0;
+            border-bottom: 2px solid var(--medium-grey);
+        }
+
+        .section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark-text);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            border-radius: 2px;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .section ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .section li {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--light-text);
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .section li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--light-blue);
+            font-weight: 600;
+        }
+
+        /* Impact Cards */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .impact-card {
+            background: var(--white);
+            border: 2px solid var(--light-blue);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+        }
+
+        .impact-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            font-size: 14px;
+            color: var(--light-text);
+            font-weight: 500;
+        }
+
+        /* Screenshot Section */
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, var(--pale-blue) 0%, rgba(232, 240, 255, 0.5) 100%);
+            border: 2px dashed var(--light-blue);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .screenshot-placeholder p {
+            color: var(--light-text);
+            margin: 0;
+        }
+
+        /* Navigation */
+        .project-nav {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--medium-grey);
+        }
+
+        .nav-btn {
+            padding: 0.85rem 1.75rem;
+            border: 2px solid var(--light-blue);
+            border-radius: 25px;
+            background: transparent;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-text);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        }
+
+        .nav-btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            color: var(--white);
+            border: none;
+        }
+
+        .nav-btn-primary:hover {
+            box-shadow: 0 6px 16px rgba(0, 86, 204, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, var(--light-grey) 100%);
+            border-top: 2px solid var(--light-blue);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--light-text);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .project-hero h1 {
+                font-size: 28px;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <h1>Arachelvi Elangovan</h1>
+            <a href="https://arachelvi.github.io/portfolio/" class="back-link">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="project-hero">
+        <div class="container">
+            <h1>Emergency Hospital Network Infrastructure Deployment</h1>
+            <p style="font-size: 18px; color: var(--light-text); margin-top: 1rem;">Building Critical Infrastructure During COVID-19 Crisis</p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Duration</div>
+                    <div class="meta-value">2 Weeks</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Year</div>
+                    <div class="meta-value">2020</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value">Program Manager</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Partner</div>
+                    <div class="meta-value">US Army Corps</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <!-- Overview -->
+        <section class="section">
+            <h2>Project Overview</h2>
+            <p>In March 2020, as COVID-19 cases surged, the US Army Corps of Engineers launched an emergency program to build field hospitals across the country. These temporary hospitals needed critical network infrastructure to operate — connectivity for patient records, telemedicine, medical equipment, and staff communications. The challenge: stand up network infrastructure across 10 hospital locations in under two weeks, with zero margin for error.</p>
+            <p>This was a crisis-mode program where execution speed, precision coordination, and 24/7 momentum were non-negotiable.</p>
+        </section>
+
+        <!-- Challenge -->
+        <section class="section">
+            <h2>The Challenge</h2>
+            <ul>
+                <li><strong>Impossible Timeline:</strong> 10 locations needed operational connectivity in 2 weeks — typical rollouts take months</li>
+                <li><strong>Unknown Scope:</strong> Hospital locations were still being determined; infrastructure needs constantly shifted</li>
+                <li><strong>Multi-Vendor Coordination:</strong> Network vendors, construction teams, medical equipment suppliers, and Army Corps all needed synchronized execution</li>
+                <li><strong>Zero Tolerance for Failure:</strong> Network downtime = patients couldn't access medical records or communicate with doctors</li>
+                <li><strong>24/7 Operations:</strong> Hospitals don't have business hours — infrastructure had to be deployed and tested without impacting incoming patients</li>
+            </ul>
+        </section>
+
+        <!-- Solution -->
+        <section class="section">
+            <h2>My Approach & Solution</h2>
+            <p><strong>Crisis Coordination Protocol:</strong> I established a daily sync with Army Corps leadership, vendors, and field teams to identify blockers in real-time and make decisions immediately — no committees, no delays.</p>
+            <p><strong>Pre-positioned Resources:</strong> Before hospital locations were finalized, I coordinated with vendors to pre-stage equipment and staff across regions. When locations were confirmed, we deployed within 48 hours.</p>
+            <p><strong>Vendor Orchestration:</strong> Managed vendor dependencies and sequencing — network infrastructure had to be ready before medical equipment arrived. Built a real-time status dashboard to track deployments across all 10 sites.</p>
+            <p><strong>24/7 Execution Momentum:</strong> Created rotating on-call teams to maintain progress without burnout. Celebrated wins daily to keep morale up during a crisis.</p>
+            <p><strong>Quality Under Pressure:</strong> Despite the speed, implemented validation checkpoints at each site to ensure zero network failures before patient intake.</p>
+        </section>
+
+        <!-- Screenshot -->
+        <div class="screenshot-placeholder">
+            <img src="https://raw.githubusercontent.com/arachelvi/portfolio/main/Project%201%20screenshot.jpg" 
+                 alt="COVID-19 Field Hospital Deployment - Project Status Dashboard" 
+                 style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2); border: 2px solid var(--light-blue);">
+            <p style="margin-top: 1rem; font-size: 13px; color: #6B7280;"><em>COVID-19 Field Hospital Deployment - Project Status Dashboard (Stony Brooks NYC)</em></p>
+        </div>
+
+        <!-- Results -->
+        <section class="section">
+            <h2>Results & Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">10</div>
+                    <div class="impact-label">Hospital Locations Operational</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">2 Weeks</div>
+                    <div class="impact-label">End-to-End Deployment Time</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">100%</div>
+                    <div class="impact-label">On-Time Delivery Under Crisis</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">4</div>
+                    <div class="impact-label">Coordinators Advanced to PM Roles</div>
+                </div>
+            </div>
+            <p style="margin-top: 2rem;"><strong>Key Outcomes:</strong></p>
+            <ul>
+                <li>All 10 hospitals received patients on schedule with zero network incidents</li>
+                <li>Established a replicable crisis deployment model that was used for subsequent emergency healthcare projects</li>
+                <li>Mentored 4 junior coordinators who took on expanded PM responsibilities — all later advanced to full Program Manager roles</li>
+                <li>Recognized internally for crisis leadership and execution excellence under impossible conditions</li>
+            </ul>
+            <p style="margin-top: 1.5rem; font-size: 14px; color: #6B7280;"><em>View the official deployment: <a href="https://www.usace.army.mil/Missions/Emergency-Operations/Coronavirus/" target="_blank" style="color: #4A90E2; font-weight: 600;">US Army Corps of Engineers - Field Hospital Deployments</a></em></p>
+        </section>
+
+        <!-- Key Learnings -->
+        <section class="section">
+            <h2>Key Learnings</h2>
+            <ul>
+                <li><strong>Crisis Requires Speed Over Perfection:</strong> In emergencies, good decisions made fast beat perfect decisions made too late. We optimized for speed while maintaining quality thresholds.</li>
+                <li><strong>People Matter Most:</strong> The teams that stayed engaged and felt supported delivered the best results. Regular communication and celebrating small wins made a difference.</li>
+                <li><strong>Pre-Planning Enables Crisis Execution:</strong> Having contingencies and pre-positioned resources meant we could move fast when it mattered.</li>
+                <li><strong>Mentoring Under Pressure Develops Leaders:</strong> Junior team members stepped up when given expanded responsibility. Crisis was an accelerator for their PM development.</li>
+            </ul>
+        </section>
+
+        <!-- Navigation -->
+        <div class="project-nav">
+            <a href="https://arachelvi.github.io/portfolio/" class="nav-btn">← Back to Portfolio</a>
+            <a href="https://arachelvi.github.io/portfolio/project2-sdwan-global.html" class="nav-btn nav-btn-primary">Next Project →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024. Arachelvi Elangovan. Open to new opportunities.</p>
+    </footer>
+</body>
+</html>

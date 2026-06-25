@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Program Status Automation | Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/tabler-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0056CC;
+            --light-blue: #4A90E2;
+            --pale-blue: #E8F0FF;
+            --light-grey: #F5F6F7;
+            --medium-grey: #D9DFE5;
+            --dark-grey: #6B7280;
+            --dark-text: #1F2937;
+            --light-text: #6B7280;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-text);
+            background: var(--light-grey);
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--white);
+            border-bottom: 2px solid var(--light-blue);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-content h1 {
+            font-size: 24px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-link {
+            font-size: 14px;
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero */
+        .project-hero {
+            background: linear-gradient(135deg, var(--pale-blue) 0%, rgba(248, 250, 252, 1) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--medium-grey);
+            margin-bottom: 2rem;
+        }
+
+        .project-hero h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 12px;
+            color: var(--light-text);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* Section */
+        .section {
+            padding: 3rem 0;
+            border-bottom: 2px solid var(--medium-grey);
+        }
+
+        .section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark-text);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            border-radius: 2px;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .section ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .section li {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--light-text);
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .section li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--light-blue);
+            font-weight: 600;
+        }
+
+        /* Workflow Box */
+        .workflow-box {
+            background: var(--white);
+            border: 2px solid var(--light-blue);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+        }
+
+        .workflow-box h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+        }
+
+        .workflow-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .workflow-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content p {
+            font-size: 15px;
+            color: var(--light-text);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .step-content strong {
+            color: var(--dark-text);
+        }
+
+        /* Impact Cards */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .impact-card {
+            background: var(--white);
+            border: 2px solid var(--light-blue);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+        }
+
+        .impact-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            font-size: 14px;
+            color: var(--light-text);
+            font-weight: 500;
+        }
+
+        /* Screenshot Section */
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, var(--pale-blue) 0%, rgba(232, 240, 255, 0.5) 100%);
+            border: 2px dashed var(--light-blue);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .screenshot-placeholder p {
+            color: var(--light-text);
+            margin: 0;
+        }
+
+        /* Navigation */
+        .project-nav {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--medium-grey);
+        }
+
+        .nav-btn {
+            padding: 0.85rem 1.75rem;
+            border: 2px solid var(--light-blue);
+            border-radius: 25px;
+            background: transparent;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-text);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        }
+
+        .nav-btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            color: var(--white);
+            border: none;
+        }
+
+        .nav-btn-primary:hover {
+            box-shadow: 0 6px 16px rgba(0, 86, 204, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, var(--light-grey) 100%);
+            border-top: 2px solid var(--light-blue);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--light-text);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .project-hero h1 {
+                font-size: 28px;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+
+            .workflow-step {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <h1>Arachelvi Elangovan</h1>
+            <a href="https://arachelvi.github.io/portfolio/" class="back-link">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="project-hero">
+        <div class="container">
+            <h1>AI-Powered Program Status Automation</h1>
+            <p style="font-size: 18px; color: var(--light-text); margin-top: 1rem;">Using Microsoft Copilot to Automate Weekly Status Reports for Healthcare Infrastructure</p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Organization</div>
+                    <div class="meta-value">HCA Healthcare</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Program</div>
+                    <div class="meta-value">Security Infrastructure Upgrade</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value">Sr. Project Manager & AI Innovator</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Scale</div>
+                    <div class="meta-value">200+ Hospitals</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <!-- Overview -->
+        <section class="section">
+            <h2>Project Overview</h2>
+            <p>Leading a security infrastructure upgrade program across 200+ HCA hospitals required weekly status reporting to 50+ executive stakeholders. Manual report compilation was consuming 4-5 hours every week — aggregating data from vendor management systems, risk registers, and deployment dashboards, then synthesizing into executive-quality narratives.</p>
+            <p>Rather than accept this bottleneck, I built a streamlined workflow using Microsoft Copilot for Microsoft 365 to automate report generation. Copilot synthesizes real-time program data into polished, executive-quality status reports in minutes, freeing time for strategic program leadership.</p>
+            <p>This project demonstrates how AI-enabled tools can transform program management operations — accelerating delivery of insights while maintaining human oversight and strategic judgment.</p>
+        </section>
+
+        <!-- Challenge -->
+        <section class="section">
+            <h2>The Challenge</h2>
+            <ul>
+                <li><strong>Time Bottleneck:</strong> Weekly status reports required manually aggregating data from 5+ sources and writing executive narratives — consuming 4-5 hours per week</li>
+                <li><strong>Consistency Issues:</strong> Reports varied in format, depth, and tone across different stakeholder groups — standardization was critical</li>
+                <li><strong>Scale Complexity:</strong> Managing 200+ hospital sites across multiple geographies with different risk profiles and deployment schedules</li>
+                <li><strong>Decision Velocity:</strong> Stakeholders needed timely insights to make rapid decisions; delayed reporting delayed decision-making</li>
+                <li><strong>Resource Constraints:</strong> Adding staff to handle reporting wasn't feasible — needed process innovation instead</li>
+            </ul>
+        </section>
+
+        <!-- Solution -->
+        <section class="section">
+            <h2>My Approach & Solution</h2>
+            <p><strong>Workflow Design:</strong> I identified that status reporting followed a predictable structure: extract data → synthesize narrative → format output. This pattern was ideal for AI automation — the inputs were structured, the process was repetitive, and the output requirements were clear.</p>
+            
+            <div class="workflow-box">
+                <h3>How It Works: Weekly Status Report Automation</h3>
+                
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <p><strong>Data Collection:</strong> Real-time program data is extracted from vendor management systems, deployment tracking dashboards, and risk registers. This includes milestone progress, completed deployments, active risks, blockers, and vendor performance metrics.</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <p><strong>Copilot Synthesis:</strong> Structured program data is fed into Microsoft Copilot for Microsoft 365 with a detailed prompt requesting executive-level synthesis. Copilot analyzes the data and generates a comprehensive status narrative with executive summary, risk assessment, and action items.</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <p><strong>Human Review & Refinement:</strong> I review the Copilot-generated draft for accuracy, context, and strategic insights. This maintains human oversight and allows for customization based on stakeholder audience and emerging program dynamics.</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <p><strong>Format & Distribution:</strong> The finalized report is formatted in Word and distributed to 50+ stakeholders via Teams every Monday morning. Consistent formatting, professional tone, and timely delivery enable faster executive decision-making.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p><strong>Key Innovation:</strong> Rather than replacing human PM work, this automation amplifies it. By eliminating the administrative burden of report compilation, I can focus on what matters most: identifying emerging risks, optimizing vendor relationships, and driving strategic program decisions.</p>
+        </section>
+
+        <!-- Screenshot Placeholder -->
+        <div class="screenshot-placeholder">
+            <i class="ti ti-photo" style="font-size: 48px; color: var(--light-blue); display: block; margin-bottom: 1rem;"></i>
+            <p><strong>Add Project Screenshots Here</strong><br>Sample status report output, workflow dashboard, stakeholder feedback metrics, program health tracking</p>
+        </div>
+
+        <!-- Results -->
+        <section class="section">
+            <h2>Results & Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">80%</div>
+                    <div class="impact-label">Time Savings Per Week</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">4.5 hrs → 30 min</div>
+                    <div class="impact-label">Report Compilation Time</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">200+</div>
+                    <div class="impact-label">Hospitals Covered Weekly</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">$100K+</div>
+                    <div class="impact-label">Annual Productivity Gain</div>
+                </div>
+            </div>
+            <p style="margin-top: 2rem;"><strong>Key Outcomes:</strong></p>
+            <ul>
+                <li>Reduced weekly report compilation from 4.5 hours to 30 minutes — 80% time savings</li>
+                <li>Achieved consistent, professional reporting across all 200+ hospital sites</li>
+                <li>Improved stakeholder satisfaction through timely, accurate status visibility</li>
+                <li>Freed 190+ hours annually for strategic PM work: vendor negotiations, risk mitigation, and stakeholder alignment</li>
+                <li>Equivalent productivity gain of 1 FTE coordinator (~$100K annually)</li>
+                <li>Established repeatable AI-PM automation framework for enterprise adoption across HCA</li>
+                <li>Demonstrated tangible ROI on Microsoft Copilot for Microsoft 365 investment</li>
+            </ul>
+        </section>
+
+        <!-- Key Learnings -->
+        <section class="section">
+            <h2>Key Learnings</h2>
+            <ul>
+                <li><strong>AI Amplifies, Not Replaces:</strong> Copilot generates excellent first drafts, but human judgment remains critical for accuracy, context, and strategic insight. The best results come from AI-human collaboration.</li>
+                <li><strong>Workflow Design Matters:</strong> The success of this automation depended on clear data inputs, structured prompts, and human review gates. AI works best in well-designed processes.</li>
+                <li><strong>Change Management is Real:</strong> Initial stakeholder skepticism about "AI-generated" reports required transparency and demonstrated quality. Building trust took time, but the results speak for themselves.</li>
+                <li><strong>Focus on High-Impact Tasks:</strong> The best candidates for automation are repetitive, high-volume, standardized tasks like reporting. Strategic decisions should remain human-driven.</li>
+                <li><strong>Enterprise Adoption Requires Proof:</strong> This project became a proof point for AI-enabled PM across HCA. Demonstrating clear ROI (time savings, cost avoidance, quality improvement) drives broader adoption.</li>
+            </ul>
+        </section>
+
+        <!-- Navigation -->
+        <div class="project-nav">
+            <a href="https://arachelvi.github.io/portfolio/project3-nordstrom-migration.html" class="nav-btn">← Previous Project</a>
+            <a href="https://arachelvi.github.io/portfolio/" class="nav-btn nav-btn-primary">Back to Portfolio →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024. Arachelvi Elangovan. Open to new opportunities.</p>
+    </footer>
+</body>
+</html>
